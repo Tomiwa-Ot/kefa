@@ -10,8 +10,8 @@ if (isset($_SERVER['HTTP_X_SIGNATURE'])) {
     $payload = file_get_contents('php://input');
     if (hash_is_valid($signature_key, $payload, $signature)){
         $response = json_decode($payload, TRUE);
+        $trxn_id = $response['details']['data']['merchant_transaction_id'];
         if ($response['details']['data']['status'] == 'new'){
-            $trxn_id = $response['details']['data']['merchant_transaction_id'];
             save_transaction($con, $trxn_id, $response);
         } else {
             update_transaction($con, $trxn_id, $response);
