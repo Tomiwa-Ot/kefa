@@ -44,8 +44,8 @@ function generateSignature($address, $secret) {
                             <h2>Kefa Communication</h2>
                         </div>
                     </div>  
-                    <span>Enter Amount (NGN)</span>
-                    <input class="form-control" type="tel" name="amount" id="amount" placeholder="NGN" required><br>
+                    <span>Enter Amount</span>
+                    <input class="form-control" type="tel" name="amount" id="amount" placeholder="Amount" required><br>
                     <span>Address</span>
                     <input class="form-control" type="text" name="address" id="address" placeholder="Address" required><br>
                     <button class="btn btn-primary col-12" type="submit">Proceed</button>
